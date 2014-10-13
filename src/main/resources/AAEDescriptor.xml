@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="SentenceAnnotatorDescriptor">
+      <import name="descriptors.annotators.SentenceAnnotatorDescriptor"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NamedEntityAnnotatorDescriptor">
+      <import name="descriptors.annotators.NamedEntityAnnotatorDescriptor"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ABNERGeneAnnotatorDescriptor">
+      <import name="descriptors.annotators.ABNERGeneAnnotatorDescriptor"/>
+    </delegateAnalysisEngine>
+    </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>AAEDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>SentenceAnnotatorDescriptor</node>
+        <node>NamedEntityAnnotatorDescriptor</node>
+        <node>ABNERGeneAnnotatorDescriptor</node>
+        </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.SentenceAnnotation</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NamedEntityAnnotation</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.ABNERGeneAnnotation</type>
+          </outputs>
+        <languagesSupported>
+          <language>en</language>
+        </languagesSupported>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
